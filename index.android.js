@@ -27,6 +27,7 @@ export default class reacttest extends Component {
           Shake or press menu button for dev menu
         </Text>
       </View>
+
     );
   }
 }
