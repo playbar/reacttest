@@ -9,7 +9,8 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 
 export default class reacttest extends Component {
@@ -26,6 +27,10 @@ export default class reacttest extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+        <Image style={styles.pic}
+            source={{uri: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2919521866,1160120689&fm=58'}}>
+        </Image>
+        <View style={styles.style_1}></View>
       </View>
     );
   }
@@ -33,6 +38,8 @@ export default class reacttest extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    borderWidth:3,
+    borderColor:'red',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -48,6 +55,16 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  pic: {
+    width:100,
+    height:100,
+  },
+  style_1:{
+    flex: 5,
+    height:40,
+    borderWidth: 1,
+    borderColor: 'red',
+  }
 });
 
 AppRegistry.registerComponent('reacttest', () => reacttest);
