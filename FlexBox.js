@@ -31,7 +31,7 @@ class Blink extends Component {
     }
 }
 
- class BlinkApp extends Component {
+ class FlexBox extends Component {
   render() {
     return (
         <View style={{
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
     }
 });
 
-AppRegistry.registerComponent('BlinkApp', () => BlinkApp);
+
