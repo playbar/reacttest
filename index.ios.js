@@ -6,57 +6,36 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  Image
+    AppRegistry,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TextInput,
+    ListView,
+    View,
+    Image
 } from 'react-native';
 
-class Blink extends Component {
+
+class BlinkApp extends Component {
+
     constructor(props){
         super(props);
-        this.state = {showText:true};
-
-        setInterval(()=>{
-            this.setState({showText:!this.state.showText});
-        }, 1000);
+        const ds = new ListView.dataSource({rowHasChanged(r1, r2)=>r1 != r2});
+        this.state = {
+            dataSource:ds.cloneWithRows([
+                'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
+            ])
+        };
     }
 
-    render(){
-        let display = this.state.showText ? this.props.text : '';
-        return(
-            <Text>{display}</Text>
+    render() {
+        return (
+
         );
     }
 }
 
- class BlinkApp extends Component {
-  render() {
-    return (
-        <View style={{
-            flex:1,
-            flexDirection:'column',
-              justifyContent:'center',
-              alignItems:'center',
-        }}>
-            <View style={{width:50, height:50, backgroundColor:'powderblue'}} />
-            <View style={{width:50, height:50, backgroundColor:'skyblue'}} />
-            <View style={{width:50, height:50, backgroundColor:'steelblue'}} />
-        </View>
-    );
-  }
-}
 
-const styles = StyleSheet.create({
-   bigblue:{
-       color:'blue',
-       fontWeight:'bold',
-       fontSize:30,
-   } ,
-    red:{
-        color:'red',
-    }
-});
 
 AppRegistry.registerComponent('BlinkApp', () => BlinkApp);
