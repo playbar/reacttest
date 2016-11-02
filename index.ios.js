@@ -6,36 +6,48 @@
 
 import React, { Component } from 'react';
 import {
-    AppRegistry,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    ListView,
-    View,
-    Image
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View
 } from 'react-native';
 
-
-class BlinkApp extends Component {
-
-    constructor(props){
-        super(props);
-        const ds = new ListView.dataSource({rowHasChanged(r1, r2)=>r1 != r2});
-        this.state = {
-            dataSource:ds.cloneWithRows([
-                'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
-            ])
-        };
-    }
-
-    render() {
-        return (
-
-        );
-    }
+export default class reacttest extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.ios.js
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+D or shake for dev menu
+        </Text>
+      </View>
+    );
+  }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
 
-
-AppRegistry.registerComponent('BlinkApp', () => BlinkApp);
+AppRegistry.registerComponent('reacttest', () => reacttest);
