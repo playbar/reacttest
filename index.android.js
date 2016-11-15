@@ -7,26 +7,29 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  Navigator,
+  ListView,
+  ScrollView,
+  Image,
   StyleSheet,
+  TextInput,
   Text,
   View
 } from 'react-native';
 
+import MyScene from './MyScene';
+import MyButton from './MyButton'
+
+
 export default class reacttest extends Component {
+
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+    return(
+        <View>
+          <Text>Current Scene:{this.props.title}</Text>
+          <Text>点我进入下一个场景</Text>
+          <MyButton />
+        </View>
     );
   }
 }
